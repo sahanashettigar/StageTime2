@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stagetime/screens/artist/artist_feed.dart';
+import 'package:stagetime/screens/navbar.dart';
 
 Color myColor = Color(0xff01395E);
 
@@ -163,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
       print('Form is valid');
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Artist()),
+        MaterialPageRoute(builder: (context) => NavBar()),
       );
     } else {
       // show validation errors
