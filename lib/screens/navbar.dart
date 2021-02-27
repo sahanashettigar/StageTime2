@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stagetime/screens/artist/artist_feed.dart';
 import 'package:stagetime/screens/authenticate/settings.dart';
+import 'package:stagetime/screens/event/eventpage.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class NavbarState extends State<NavBar> {
   int _currentIndex = 0;
   final tabs = [
     Center(child: Artist()),
-    Center(child: Text('In events')),
+    Center(child: EventsPage()),
     Center(child: Text('Upload anything new')),
     Center(child: Settings()),
   ];
