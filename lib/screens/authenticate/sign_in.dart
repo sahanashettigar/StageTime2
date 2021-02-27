@@ -14,18 +14,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
-  final AuthService _auth =AuthService();
+  final AuthService _auth = AuthService();
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   bool _obscurePassword;
   bool _autovalidate;
   TextEditingController _emailController;
   TextEditingController _passwordController;
   //text field state
-  String email='';
-  String password='';
-
-
+  String email = '';
+  String password = '';
 
   @override
   void initState() {
@@ -72,9 +69,8 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                    setState(()=> email=val);
-
+                  onChanged: (val) {
+                    setState(() => email = val);
                   },
                   style: TextStyle(
                     color: Colors.white,
@@ -107,8 +103,8 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                      setState(()=> password=val);
+                  onChanged: (val) {
+                    setState(() => password = val);
                   },
                   style: TextStyle(
                     color: Colors.white,
@@ -137,18 +133,18 @@ class _LoginPageState extends State<LoginPage> {
                 height: 16,
               ),
               RaisedButton(
-                  color: Theme.of(context).primaryColor,
-                  textColor: Colors.white,
-                  padding: const EdgeInsets.all(16),
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(8.0)),
-                  child: Text('LOGIN'),
-                  // onPressed: _validateFormAndLogin
-                  onPressed: () async{
-                    print(email);
-                    print(password);
-                  }
-                  ),
+                color: Theme.of(context).primaryColor,
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(16),
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(8.0)),
+                child: Text('LOGIN'),
+                onPressed: _validateFormAndLogin,
+                // onPressed: () async{
+                //   print(email);
+                //   print(password);
+                // }
+              ),
               const SizedBox(height: 40),
             ],
           ),
