@@ -64,13 +64,13 @@ class _ArtistState extends State<Artist> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.face), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.explore), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: "")
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     BottomNavigationBarItem(icon: Icon(Icons.face), label: ''),
+      //     BottomNavigationBarItem(icon: Icon(Icons.explore), label: ''),
+      //     BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: "")
+      //   ],
+      // ),
     );
   }
 }
