@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "565638049511",
+    "project_id": "stagetime-7c27a",
+    "storage_bucket": "stagetime-7c27a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565638049511:android:bc7afedd05add050ef7c42",
+        "android_client_info": {
+          "package_name": "com.project.stagetime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565638049511-fipqhslgv1284gblkacp5nb6ndd9abtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8UaGit3umJ5w4qj-93oQ_mR50CxjfvPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565638049511-fipqhslgv1284gblkacp5nb6ndd9abtm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
