@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stagetime/services/auth.dart';
 import 'sign_up.dart';
 import 'profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Color myColor = Color(0xff01395E);
 
@@ -10,11 +12,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  final AuthService _auth =AuthService();
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   bool _obscurePassword;
   bool _autovalidate;
   TextEditingController _emailController;
   TextEditingController _passwordController;
+  //text field state
+  String email='';
+  String password='';
+
+
 
   @override
   void initState() {
@@ -61,6 +70,10 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  onChanged: (val){
+                    setState(()=> email=val);
+
+                  },
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -92,6 +105,9 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
+                  onChanged: (val){
+                      setState(()=> password=val);
+                  },
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -125,7 +141,12 @@ class _LoginPageState extends State<LoginPage> {
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
                   child: Text('LOGIN'),
-                  onPressed: _validateFormAndLogin),
+                  // onPressed: _validateFormAndLogin
+                  onPressed: () async{
+                    print(email);
+                    print(password);
+                  }
+                  ),
               const SizedBox(height: 40),
             ],
           ),
