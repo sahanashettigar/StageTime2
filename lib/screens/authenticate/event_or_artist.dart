@@ -1,19 +1,18 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:stagetime/screens/authenticate/event_or_artist.dart';
 import 'package:stagetime/screens/authenticate/sign_in.dart';
+import 'sign_up.dart';
+import 'sign_up.dart';
 
 const mosaic = 'assets/mosaic2.png';
 
-class SignIn extends StatefulWidget {
+class EventOrArtist extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _EventorartistState createState() => _EventorartistState();
 }
 
 Color myColor = Color(0xff01395E);
 
-class _SignInState extends State<SignIn> {
+class _EventorartistState extends State<EventOrArtist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,23 +28,22 @@ class _SignInState extends State<SignIn> {
                 // Image.asset('assets/mosaic2.png'),
 
                 Image.asset('assets/mic.png'),
-                const SizedBox(height: 40),
+                const SizedBox(height: 60),
                 ListTile(
                   title: Text(
-                    'STAGE TIME',
+                    'WHO DO YOU RESONATE WITH ?',
                     style: TextStyle(
                       color: Color(0xFFF6D48F),
-                      fontSize: 40,
+                      fontSize: 20,
                       fontFamily: 'Roboto',
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                // SvgPicture.asset(miclogo),
                 const SizedBox(height: 40),
                 RaisedButton(
                     child: Text(
-                      'LOGIN',
+                      'ARTIST',
                       style: TextStyle(fontSize: 35),
                     ),
                     textColor: Colors.white,
@@ -54,7 +52,7 @@ class _SignInState extends State<SignIn> {
                       {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
+                          MaterialPageRoute(builder: (context) => Sign_Up()),
                         );
                       }
                     },
@@ -70,7 +68,7 @@ class _SignInState extends State<SignIn> {
 
                 ElevatedButton(
                   child: Text(
-                    'SIGN UP',
+                    '  EVENT  ',
                     style: TextStyle(fontSize: 35),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -86,8 +84,7 @@ class _SignInState extends State<SignIn> {
                     {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => EventOrArtist()),
+                        MaterialPageRoute(builder: (context) => Sign_Up()),
                       );
                     }
                   },

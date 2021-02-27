@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:stagetime/screens/artist/artist_feed.dart';
 import 'package:stagetime/screens/navbar.dart';
 import 'package:stagetime/services/auth.dart';
-import 'sign_up.dart';
-import 'profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 Color myColor = Color(0xff01395E);
