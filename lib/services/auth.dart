@@ -11,9 +11,10 @@ class AuthService{
     return user != null ? UserModel(uid:user.uid):null;
   }
 
-  // Stream<UserModel> get user {
-  //   return _auth.onAuthStateChanged.map((User user)=>_userFromFirebaseUser(user));
-  // }
+  Stream <UserModel> get user {
+    return _auth.authStateChanges()
+      .map( _userFromFirebaseUser);
+  }
 
 
 //Signup with email &pass
