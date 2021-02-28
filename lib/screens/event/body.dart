@@ -132,7 +132,7 @@ class _BodyState extends State<Body> {
                       ElevatedButton(
                         onPressed: null,
                         child: new Text(
-                          'Apply for open mic',
+                          'Apply',
                           textAlign: TextAlign.left,
                         ),
                       )
@@ -174,12 +174,13 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   ButtonBar(
+                    alignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       ElevatedButton(
                         onPressed: null,
                         child: new Text(
-                          'Apply for open mic',
+                          'Apply',
                           textAlign: TextAlign.left,
                         ),
                       )
