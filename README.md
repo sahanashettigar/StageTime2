@@ -16,9 +16,10 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-[after installing flutter and dart]
+after installing flutter and dart
 
 RUN
 
 flutter pub get
+
 flutter run
