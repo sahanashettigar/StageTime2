@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stagetime/screens/authenticate/sign_in.dart';
 import 'sign_up.dart';
-import 'sign_up.dart';
 
 const mosaic = 'assets/mosaic2.png';
 

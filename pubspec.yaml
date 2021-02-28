@@ -32,7 +32,9 @@ dependencies:
   firebase_auth: ^0.20.1
   firebase_core: ^0.7.0
   provider: ^4.3.3
-
+  audioplayers: ^0.17.4
+  assets_audio_player: ^2.0.13+8
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,6 +60,7 @@ flutter:
     - assets/cafe2.jpeg
     - assets/cafe3.jpeg
     - assets/artist.png
+    - assets/office.mp3
   
     # - images/a_dot_ham.jpeg
 

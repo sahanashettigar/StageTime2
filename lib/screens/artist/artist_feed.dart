@@ -1,4 +1,6 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 Color myColor = Color(0xff01395e);
 
@@ -8,6 +10,90 @@ class Artist extends StatefulWidget {
 }
 
 class _ArtistState extends State<Artist> {
+  Duration _duration = Duration();
+  Duration _position = Duration();
+  AudioPlayer advancedPlayer;
+  AudioCache audioCache;
+  @override
+  void initState() {
+    super.initState();
+    initPlayer();
+  }
+
+  void initPlayer() {
+    advancedPlayer = AudioPlayer();
+    audioCache = AudioCache(fixedPlayer: advancedPlayer);
+    advancedPlayer.durationHandler = (d) => setState(() {
+          _duration = d;
+        });
+    advancedPlayer.positionHandler = (p) => setState(() {
+          _position = p;
+        });
+  }
+
+  String localFilePath;
+  Widget _tab(List<Widget> children) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+              children: children
+                  .map((w) => Container(child: w, padding: EdgeInsets.all(6.0)))
+                  .toList()),
+        )
+      ],
+    );
+  }
+
+  Widget _btn(IconData icon, VoidCallback onPressed) {
+    return ButtonTheme(
+      minWidth: 48.0,
+      child: Container(
+        width: 100,
+        height: 45,
+        child: RaisedButton(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          child: Icon(icon),
+          color: Color(0xffff7575),
+          textColor: Colors.white,
+          onPressed: onPressed,
+        ),
+      ),
+    );
+  }
+
+  Widget slider() {
+    return Slider(
+      activeColor: Colors.black12,
+      inactiveColor: myColor,
+      value: _position.inSeconds.toDouble(),
+      min: 0.0,
+      max: _duration.inSeconds.toDouble(),
+      onChanged: (double value) {
+        setState(() {
+          seekToSecond(value.toInt());
+          value = value;
+        });
+      },
+    );
+  }
+
+  Widget localAudio() {
+    return _tab([
+      _btn(Icons.play_arrow_rounded, () => audioCache.play('office.mp3')),
+      _btn(Icons.pause, () => advancedPlayer.pause()),
+      slider()
+    ]);
+  }
+
+  void seekToSecond(int second) {
+    Duration newDuration = Duration(seconds: second);
+    advancedPlayer.seek(newDuration);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,10 +149,27 @@ class _ArtistState extends State<Artist> {
               textAlign: TextAlign.center,
             ),
             subtitle: Text(
-              "Hey! I'm Michelle from PESU. Im a musician. I'm extremely passionate about music and learning instruments. I can play the guitar and keyboard. It brings me joy to watch people smile as I perform.",
+              "I'm extremely passionate about music and learning instruments. I can play the guitar and keyboard. It brings me joy to watch people smile as I perform.",
               textAlign: TextAlign.center,
             ),
           ),
+          ListTile(
+            title: Text(
+              'Audio File : Top Played',
+              textAlign: TextAlign.center,
+            ),
+            subtitle: Text(
+              "You should listen to this! It sounds great!",
+              textAlign: TextAlign.center,
+            ),
+          ),
+          localAudio(),
+          // DefaultTabController(
+          //   length: 1,
+          //   child: Scaffold(
+          //       backgroundColor: Colors.teal,
+          //       body: TabBarView(children: <Widget>[localAudio()])),
+          // )
         ],
       ),
       // bottomNavigationBar: BottomNavigationBar(
