@@ -32,7 +32,7 @@ class _SignInState extends State<SignIn> {
                 const SizedBox(height: 40),
                 ListTile(
                   title: Text(
-                    'STAGE TIME',
+                    'STAGETIME',
                     style: TextStyle(
                       color: Color(0xFFF6D48F),
                       fontSize: 40,
