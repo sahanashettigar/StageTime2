@@ -14,6 +14,7 @@ class NavbarState extends State<NavBar> {
     Center(child: Artist()),
     Center(child: EventsPage()),
     Center(child: Text('Upload anything new')),
+    Center(child: Text('Notifications')),
     Center(child: Settings()),
   ];
   @override
@@ -28,6 +29,7 @@ class NavbarState extends State<NavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.face), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.explore), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.add_a_photo), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
         ],
         onTap: (index) {

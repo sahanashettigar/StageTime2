@@ -58,9 +58,14 @@ class _ArtistState extends State<Artist> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
           ListTile(
-            title: Text('About me'),
+            title: Text(
+              'About me',
+              textAlign: TextAlign.center,
+            ),
             subtitle: Text(
-                "Hey! I'm michelle from PESU. Im a musician and a choir singer. I'm extremely passionate about music and learning instruments. I can play the guitar and keyboard. I love to perform at events. It brings me joy to watch people smile as I perform."),
+              "Hey! I'm Michelle from PESU. Im a musician. I'm extremely passionate about music and learning instruments. I can play the guitar and keyboard. It brings me joy to watch people smile as I perform.",
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
