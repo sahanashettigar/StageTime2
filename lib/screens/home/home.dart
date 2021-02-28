@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stagetime/screens/authenticate/Landing_page.dart';
+import 'package:stagetime/screens/navbar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,7 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:Text('Home'),
+      child: SignIn(),
     );
   }
-}
+  }

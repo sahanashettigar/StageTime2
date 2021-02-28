@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stagetime/services/auth.dart';
 
-import 'Landing_page.dart';
 import 'Landing_page.dart';
 
 class Settings extends StatefulWidget {
@@ -10,6 +10,9 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   @override
+
+final AuthService _auth =AuthService();
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: myColor,
@@ -35,6 +38,7 @@ class _SettingsState extends State<Settings> {
                     color: Color(0xff275F84),
                     onPressed: () async {
                       {
+                        await _auth.signOut();
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => SignIn()),

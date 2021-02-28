@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stagetime/screens/navbar.dart';
 import 'package:stagetime/services/auth.dart';
 
 Color myColor = Color(0xff01395E);
@@ -9,8 +10,8 @@ class Sign_Up extends StatefulWidget {
 }
 
 class _Sign_UpState extends State<Sign_Up> {
-    final AuthService _auth =AuthService();
-    final _formKey=GlobalKey<FormState>();
+  final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
@@ -20,13 +21,11 @@ class _Sign_UpState extends State<Sign_Up> {
   TextEditingController _passwordController;
   TextEditingController _mobileNoController;
   TextEditingController _usernameController;
-   String email='';
-  String password='';
-  String userName='';
-  String mobileNo='';
-  String error='';
-
-
+  String email = '';
+  String password = '';
+  String userName = '';
+  String mobileNo = '';
+  String error = '';
 
   @override
   void initState() {
@@ -61,8 +60,8 @@ class _Sign_UpState extends State<Sign_Up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                      setState(()=> email=val);
+                  onChanged: (val) {
+                    setState(() => email = val);
                   },
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -96,8 +95,8 @@ class _Sign_UpState extends State<Sign_Up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                      setState(()=> userName=val);
+                  onChanged: (val) {
+                    setState(() => userName = val);
                   },
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -130,8 +129,8 @@ class _Sign_UpState extends State<Sign_Up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                      setState(()=> password=val);
+                  onChanged: (val) {
+                    setState(() => password = val);
                   },
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -164,8 +163,8 @@ class _Sign_UpState extends State<Sign_Up> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  onChanged: (val){
-                      setState(()=> mobileNo=val);
+                  onChanged: (val) {
+                    setState(() => mobileNo = val);
                   },
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -203,26 +202,33 @@ class _Sign_UpState extends State<Sign_Up> {
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(8.0)),
                   child: Text('LOGIN'),
-                  onPressed: ()async{
-                    if(_formKey.currentState.validate()){
-                      dynamic result= await _auth.signUpStageTime(email,password);
-                      if(result ==null){
-                        setState(()=>error='');
+                  onPressed: () async {
+                    if (_formKey.currentState.validate()) {
+                      dynamic result =
+                          await _auth.signUpStageTime(email, password);
+                      print(result);
+                      print("hey");
+                      if (result != null) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NavBar()),
+                        );
+                      }
+                      if (result == null) {
+                        print(result);
+                        setState(() => {});
                       }
                       print(email);
                       print(email);
                       print(email);
                       print(email);
                     }
-
                   }),
-                  SizedBox(height:10),
-                  Text(
-                    error,
-                    style:TextStyle(color:Colors.red,fontSize:14.0),
-                  )
-
-
+              SizedBox(height: 10),
+              Text(
+                error,
+                style: TextStyle(color: Colors.red, fontSize: 14.0),
+              )
             ],
           ),
         ),
